@@ -3,10 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/dom": "^10.4.1",
-    "@testing-library/jest-dom": "^6.7.0",
-    "@testing-library/react": "^16.3.0",
-    "@testing-library/user-event": "^13.5.0",
+ 
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
    
@@ -18,7 +15,11 @@
     "start": "craco start --verbose",
     "build": "craco build",
     "test": "craco test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "docker-build": "docker build -t reactapp2 .",
+    "docker-run": "docker run -p 3000:3000 reactapp2",
+    "docker-build-prod": "docker buildx build   --platform linux/amd64                -t myreactappcontainer2.azurecr.io/reactdeploymentapp:latest .",
+    "docker-push-prod": "docker push myreactappcontainer2.azurecr.io/reactdeploymentapp:latest"
   },
   "eslintConfig": {
     "extends": [

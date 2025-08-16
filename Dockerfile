@@ -1,6 +1,6 @@
 # Stage 1: Build the React application
 # Use a Node.js image to build the app
-FROM node:18-alpine as builder
+FROM node:18-alpine AS builder
 
 # Set the working directory
 WORKDIR /app
@@ -20,7 +20,7 @@ RUN npm run build
 
 # Stage 2: Serve the application with Nginx
 # Use a lightweight Nginx image
-FROM nginx:alpine
+FROM nginx:alpine AS production
 
 # Copy the Nginx configuration file
 COPY nginx.conf /etc/nginx/conf.d/default.conf
