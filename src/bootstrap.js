@@ -25,14 +25,7 @@ const mount = (el) => {
   reportWebVitals();
 };
 
-if (process.env.NODE_ENV === 'development') {
-  const devRoot = document.querySelector('#_marketing-dev-root');
-  if (devRoot) {
-    mount(devRoot);
-  }
-}
 
-console.log('Marketing App is running!');
 
 export { mount };
 
